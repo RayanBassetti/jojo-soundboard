@@ -1,7 +1,5 @@
 import React from 'react'
-// import json from './infos.json'
 import SingleAudio from './SingleAudio'
-// import Audio from './audio'
 import firebaseApp from '../firebase/index'
 // import * as audio from '../ressources/audio/jojo/sta_cru'
 
@@ -10,39 +8,38 @@ class Main extends React.Component {
     constructor() {
         super();
         this.state = {
-            dataSource: [],
-            loading: true
+            dataSource: null,
+            loaded: false
         }
     }
 
     componentDidMount() {
-        let pathReference = firebaseApp.storage().ref("star_cru")
-        var audioArrayFire = []
-        pathReference.listAll()
-            .then(function(result) {
-                result.items.forEach(function(item, index) {
-                    item.getDownloadURL().then(url => {
-                        console.log(item, index)
-                        audioArrayFire.push(<SingleAudio key={index} src={url} />)
+        let pathReference = firebaseApp.storage().ref("star_cru") // firebase path to get all the files
+        const audioArrayFire = [];
+        pathReference.listAll().then((result) => { //list all the files
+            result.items.forEach((item, index) => { // for each file
+                console.log(item.name)
+                item.getDownloadURL().then(url => { // get the download link...
+                    const audio = <SingleAudio 
+                                    name={item.name} 
+                                    key={index} 
+                                    src={url} 
+                                /> // ... and put it in the SingleAudio Component
+                    audioArrayFire.push(audio) 
+                    this.setState({
+                        dataSource: audioArrayFire
                     })
                 })
             })
-            .catch(function(error) {
+        }).catch(function(error) {
                 console.log(error)
-            });
-        console.log(audioArrayFire)
-        audioArrayFire.forEach((item) => {console.log("Oui", item)})
-        this.setState({
-            dataSource: audioArrayFire
-        })
+        });
     }
 
     render() {
-        return (
-            <div>
-            </div>
-        )
-    
+        return <div>
+            {this.state.dataSource}
+        </div>
     }
 }
 
