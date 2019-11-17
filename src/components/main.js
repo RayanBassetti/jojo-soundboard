@@ -18,16 +18,17 @@ class Main extends React.Component {
         const audioArrayFire = [];
         pathReference.listAll().then((result) => { //list all the files
             result.items.forEach((item, index) => { // for each file
-                console.log(item.name)
+                var name = item.name
                 item.getDownloadURL().then(url => { // get the download link...
                     const audio = <SingleAudio 
-                                    name={item.name} 
+                                    name={name} 
                                     key={index} 
                                     src={url} 
                                 /> // ... and put it in the SingleAudio Component
                     audioArrayFire.push(audio) 
                     this.setState({
-                        dataSource: audioArrayFire
+                        dataSource: audioArrayFire,
+                        loaded: true
                     })
                 })
             })
@@ -37,9 +38,17 @@ class Main extends React.Component {
     }
 
     render() {
-        return <div>
-            {this.state.dataSource}
-        </div>
+        const {dataSource, loaded} = this.state;
+        const items = dataSource;
+        if(loaded) {
+            return <div>
+                {items}
+            </div>
+        } else {
+            return <div>
+                <h1>Loading...</h1>
+            </div>
+        }
     }
 }
 
