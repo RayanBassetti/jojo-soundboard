@@ -1,3 +1,19 @@
+
+# KONO DIO DA
+
+## What's this app 
+
+- Soundboard made with Firebase Storage and ReactJs
+
+## What's planned 
+
+- Hosting the app on Heroku
+- Css 
+- Adding all the arcs 
+
+
+# CREATE REACT APP
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
