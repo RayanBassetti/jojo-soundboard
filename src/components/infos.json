@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "key": 0,
+            "name": "rero",
+            "src": "https://firebasestorage.googleapis.com/v0/b/jojo-react-app.appspot.com/o/star_cru%2FRERO-RERO-RERO.wav?alt=media&token=895e87e7-f9fa-4c7c-9e89-13f5bfdeb8c2"
+        },
+        {
+            "key": 1,
+            "name": "wry",
+            "src": "https://audioreactapp.s3.eu-west-3.amazonaws.com/jojo/WRYYYY.wav"
+        },
+        {
+            "key": 2,
+            "name": "yes i am",
+            "src": "https://audioreactapp.s3.eu-west-3.amazonaws.com/jojo/YES+I+AM.wav"
+        },
+        {
+            "key": 3,
+            "name": "yare yare daze",
+            "src": "https://audioreactapp.s3.eu-west-3.amazonaws.com/jojo/YARE+YARE+DAZE...wav"
+        }
+    ]
+}
