@@ -40,15 +40,16 @@ class Main extends React.Component {
     render() {
         const {dataSource, loaded} = this.state;
         const items = dataSource;
-        if(loaded) {
-            return <div>
-                {items}
+        return(
+            <div class="containerContent">
+                {loaded &&
+                    <div class="containerFiles">{items}</div>
+                }
+                {!loaded && 
+                    <h1>Loading...</h1>
+                }
             </div>
-        } else {
-            return <div>
-                <h1>Loading...</h1>
-            </div>
-        }
+        )
     }
 }
 
