@@ -42,12 +42,11 @@ class Main extends React.Component {
         const items = dataSource;
         return(
             <div class="containerContent">
-                {loaded &&
+                {loaded ? (
                     <div class="containerFiles">{items}</div>
-                }
-                {!loaded && 
+                ) : (
                     <h1>Loading...</h1>
-                }
+                )}
             </div>
         )
     }
