@@ -1,6 +1,7 @@
 import React from 'react'
 import SingleAudio from './SingleAudio'
 import firebaseApp from '../firebase/index'
+import '../css/index.css'
 // import * as audio from '../ressources/audio/jojo/sta_cru'
 
 class Main extends React.Component {
