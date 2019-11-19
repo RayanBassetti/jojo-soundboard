@@ -14,6 +14,8 @@ class Main extends React.Component {
         }
     }
 
+
+
     componentDidMount() {
         let pathReference = firebaseApp.storage().ref("star_cru") // firebase path to get all the files
         const audioArrayFire = [];
@@ -42,13 +44,13 @@ class Main extends React.Component {
         const {dataSource, loaded} = this.state;
         const items = dataSource;
         return(
-            <div class="containerContent">
+            <section class="containerContent">
                 {loaded ? (
                     <div class="containerFiles">{items}</div>
                 ) : (
-                    <h1>Loading...</h1>
+                    <h1 class="loadingText">Loading...</h1>
                 )}
-            </div>
+            </section>
         )
     }
 }

@@ -1,6 +1,48 @@
-.containerFiles {
+* {
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+.appHeader {
+    background-color: rgb(56, 11, 56);
+    width: 100%;
+    height: 70px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
+    .headerText {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+    }
 }
+
+.containerContent {
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .containerFiles {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-top: 20px;
+
+        figure {
+            margin: auto;
+            margin-top: 10px;
+            figcaption {
+                text-align: center;
+            }
+        }
+    }
+
+    .loadingText {
+        font-size: 20px;
+    }
+
+}
+  

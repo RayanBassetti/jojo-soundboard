@@ -2,15 +2,17 @@ import React from 'react';
 // import logo from './logo.svg';
 import Main from './components/main';
 import './css/App.css';
+import './css/index.css'
+import './css/style.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>J o j o</h1>
+    <main>
+      <header className="appHeader">
+        <h1 class="headerText">Jojo Soundboard</h1>
       </header>
        <Main />
-    </div>
+    </main>
   );
 }
 
